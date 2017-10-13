@@ -1,0 +1,170 @@
+<html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script>
+    var moviesData = $moviesData
+    var sortingOrder = 'title';
+
+function UniqueArrayBy(collection, keyname) {
+        var output = [],
+        keys = [];
+
+        angular.forEach(collection, function(item) {
+                  var key = item[keyname];
+                  if(keys.indexOf(key) === -1) {
+                      keys.push(key);
+                      output.push(item);
+                  }
+              });
+        return output;
+   };
+
+var app = angular.module('myApp', []);
+
+app.controller('moviesCtrl', function(\$scope, \$filter ) {
+
+    \$scope.sortingOrder = sortingOrder;
+    \$scope.reverse = false;
+    \$scope.filteredItems = [];
+    \$scope.groupedItems = [];
+    \$scope.itemsPerPage = 50;
+    \$scope.pagedItems = [];
+    \$scope.currentPage = 0;
+    \$scope.items = UniqueArrayBy(moviesData,'title');
+
+    var searchMatch = function (haystack, needle) {
+        if (!needle) {
+            return true;
+        }
+        if(typeof haystack == 'string'){
+            return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+        }
+    };
+
+    // init the filtered items
+    \$scope.search = function () {
+        \$scope.filteredItems = \$filter('filter')(\$scope.items, function (item) {
+            for(var attr in item) {
+                if (searchMatch(item[attr], \$scope.query))
+                    return true;
+            }
+            return false;
+        });
+        // take care of the sorting order
+        if (\$scope.sortingOrder !== '') {
+            \$scope.filteredItems = \$filter('orderBy')(\$scope.filteredItems, \$scope.sortingOrder, \$scope.reverse);
+        }
+        \$scope.currentPage = 0;
+        // now group by pages
+        \$scope.groupToPages();
+    };
+
+    // calculate page in place
+    \$scope.groupToPages = function () {
+        \$scope.pagedItems = [];
+
+        for (var i = 0; i < \$scope.filteredItems.length; i++) {
+            if (i % \$scope.itemsPerPage === 0) {
+                \$scope.pagedItems[Math.floor(i / \$scope.itemsPerPage)] = [ \$scope.filteredItems[i] ];
+            } else {
+                \$scope.pagedItems[Math.floor(i / \$scope.itemsPerPage)].push(\$scope.filteredItems[i]);
+            }
+        }
+    };
+
+    \$scope.range = function (start, end) {
+        var ret = [];
+        if (!end) {
+            end = start;
+            start = 0;
+        }
+        for (var i = start; i < end; i++) {
+            ret.push(i);
+        }
+        return ret;
+    };
+
+    \$scope.prevPage = function () {
+        if (\$scope.currentPage > 0) {
+            \$scope.currentPage--;
+        }
+    };
+
+    \$scope.nextPage = function () {
+        if (\$scope.currentPage < \$scope.pagedItems.length - 1) {
+            \$scope.currentPage++;
+        }
+    };
+
+    \$scope.setPage = function () {
+        \$scope.currentPage = this.n;
+    };
+
+    // functions have been describe process the data for display
+    \$scope.search();
+
+    // change sorting order
+    \$scope.sort_by = function(newSortingOrder) {
+        if (\$scope.sortingOrder == newSortingOrder)
+            \$scope.reverse = !\$scope.reverse;
+
+        \$scope.sortingOrder = newSortingOrder;
+
+    };
+});
+
+</script>
+
+<body>
+<div ng-app="myApp">
+
+
+    <div ng-controller="moviesCtrl">
+    <br/><br/>
+     <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
+      <br/><br/>
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <th>
+                <a href="#" ng-click="sort_by('title')">
+                          Title <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                          </a>
+                          </th>
+                <th>Urls</th>
+            </thead>
+            <tfoot>
+                                <td colspan="6">
+                                    <div class="pagination pull-right">
+                                        <ul>
+                                            <li ng-class="{disabled: currentPage == 0}">
+                                                <a href ng-click="prevPage()">Prev</a>
+                                            </li>
+                                            <li ng-repeat="n in range(pagedItems.length)"
+                                                ng-class="{active: n == currentPage}"
+                                            ng-click="setPage()">
+                                                <a href ng-bind="n + 1">1</a>
+                                            </li>
+                                            <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                                <a href ng-click="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tfoot>
+            <tr ng-repeat="movie in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+                <td>{{movie.title}}</td>
+                <td>
+                    <li ng-repeat-end ng-repeat="vUrl in movie.videoUrls track by \$index">
+                        <a href="{{vUrl}}">{{vUrl}}</a></li>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
