@@ -13,18 +13,15 @@ src/main/resources/config.yaml
 
 ### Sample output
 ```bash
-Starting a Gradle Daemon, 1 stopped Daemon could not be reused, use --status for details
-:compileJava UP-TO-DATE
-:compileGroovy
-:processResources
-:classes
-:createHtml
-Took 137 secs to identify links...
-Open ********************/src/main/angularjs/movies_index.html
+Support for running Gradle using Java 7 has been deprecated and is scheduled to be removed in Gradle 5.0. Please see https://docs.gradle.org/4.2/userguide/java_plugin.html#sec:java_cross_compilation for more details.
 
-BUILD SUCCESSFUL
+> Task :createHtml
+Took 140 secs to identify links...
+Open ************************src/main/angularjs/movies_index.html
 
-Total time: 2 mins 25.05 secs
+
+BUILD SUCCESSFUL in 2m 25s
+3 actionable tasks: 3 executed
 ```
 
 ### View Movies links
