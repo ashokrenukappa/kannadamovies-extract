@@ -1,0 +1,719 @@
+<html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script>
+    var moviesData = [
+    {
+        "title": "Mostly Sunny (2016) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/0AKmePcE5X8"
+        ]
+    },
+    {
+        "title": "Afterburn/Aftershock (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/1jvMI9Df4r0"
+        ]
+    },
+    {
+        "title": "Marshall (2017) DVDScr Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/ZY2TaT99K2A"
+        ]
+    },
+    {
+        "title": "The Son of Bigfoot (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/dSBofafpeeQ"
+        ]
+    },
+    {
+        "title": "Crown Heights (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/mMrMhG2ymDU"
+        ]
+    },
+    {
+        "title": "Zee Kannada- 17-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/FSKmGeTYxOM",
+            "https://openload.co/f/ip_asPNl2s8",
+            "https://openload.co/f/1Q7JMYMW1fo",
+            "https://openload.co/f/OYlxH2qxeMo",
+            "https://openload.co/f/6x1P_G8t6dY",
+            "https://openload.co/f/aaagmc0oJrPZgA",
+            "https://openload.co/f/iWNIg9Hv49I",
+            "https://openload.co/f/yPd0u98jtIA",
+            "https://openload.co/f/x8RHoGKt1rU",
+            "https://openload.co/f/QpK7J_JGpLs"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (2pm) - 17/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/8sUX8D9Ey1M"
+        ]
+    },
+    {
+        "title": "Star Suvarna- Kannada Serial- 17-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/qWqSWF_mFLo",
+            "https://openload.co/f/w1T5WvtQgl0",
+            "https://openload.co/f/a1wR4ERx71Y",
+            "https://openload.co/f/hmSYJOtbId4",
+            "https://openload.co/f/Usz_nZMkEWs",
+            "https://openload.co/f/I_cZQikJD9k",
+            "https://openload.co/f/1h2zmNDaxfc"
+        ]
+    },
+    {
+        "title": "Shantam Paapam- 17-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/fGZjHBZEc_g"
+        ]
+    },
+    {
+        "title": "Colors Kannada Serial- 17-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/5GdebPOP7oA",
+            "https://openload.co/f/949xolNowmg",
+            "https://openload.co/f/Cpv8CKuH0TU",
+            "https://openload.co/f/SCykoRZ2BO4",
+            "https://openload.co/f/Y5GPpi1XDpw",
+            "https://openload.co/f/leDzuKRYf0U",
+            "https://openload.co/f/a1uB7rRZRO0",
+            "https://openload.co/f/_HBgzAdplqw"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 17/11/2017- Day 47",
+        "videoUrls": [
+            "https://openload.co/f/WHbAjNlkcEk"
+        ]
+    },
+    {
+        "title": "Colors Super- 17-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/ZtTbHhScJwU",
+            "https://openload.co/f/bM0pmMJsYbA",
+            "https://openload.co/f/daclqpVHQYo",
+            "https://openload.co/f/B6puJR_rGx8",
+            "https://openload.co/f/03DTkfUfUns"
+        ]
+    },
+    {
+        "title": "Oggarane Dabbi- 17/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/t9H1lSSQyy4"
+        ]
+    },
+    {
+        "title": "Colors Kannada Serial- 16-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/GpxqUU0ZlgA",
+            "https://openload.co/f/_JGNEvvh0go",
+            "https://openload.co/f/cyLuD2Q_sk4",
+            "https://openload.co/f/3YijiZZhKnY",
+            "https://openload.co/f/7CerdYGHCFo",
+            "https://openload.co/f/6kXeSYniY5U",
+            "https://openload.co/f/xcGXa8KV6BY",
+            "https://openload.co/f/qP3YuH71A6Y"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (11:30pm) - 16/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/iT3i_GMQwd0"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/LaL3zboWffo"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/OphrThxwd1k"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Part 5",
+        "videoUrls": [
+            "https://openload.co/f/jrari-eUAmY"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Part 4",
+        "videoUrls": [
+            "https://openload.co/f/_XhfhCpZ2E8"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Part 3",
+        "videoUrls": [
+            "https://openload.co/f/FBnUa6zwGnE"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Part 2",
+        "videoUrls": [
+            "https://openload.co/f/e1qwf6DH6so"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 17/11/2017 - Day 33-Part 1",
+        "videoUrls": [
+            "https://openload.co/f/aTyPOpwML08"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 Unseen Avantara Not Seen On TV - 16-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/9sWha6NpJr8"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Full Video - HD",
+        "videoUrls": [
+            "https://openload.co/f/Es5gWZNqli0"
+        ]
+    },
+    {
+        "title": "Colors Super- 16-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/524j5ukJBzw",
+            "https://openload.co/f/onM3AmBQgNU",
+            "https://openload.co/f/sTZwyZZfMus",
+            "https://openload.co/f/qQrRa9ar6MM",
+            "https://openload.co/f/_4lvgEZvzPE"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (2pm) - 16/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/8f5uIFGgcII"
+        ]
+    },
+    {
+        "title": "Shantam Paapam- 16-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/XnqilN_04eo"
+        ]
+    },
+    {
+        "title": "Star Suvarna- Kannada Serial- 16-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/VPkjr1r4YL8",
+            "https://openload.co/f/bBnMnSLcj90",
+            "https://openload.co/f/5yMauMv8_rg",
+            "https://openload.co/f/YH_r4FYzUz4",
+            "https://openload.co/f/bM8abndkolk",
+            "https://openload.co/f/tYKIoJ4jyUE",
+            "https://openload.co/f/9rCRt9UvbCo"
+        ]
+    },
+    {
+        "title": "Zee Kannada- 16-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/pMXd4qMEKFs",
+            "https://openload.co/f/Z3yvRcjParE",
+            "https://openload.co/f/uRrczDPP9YI",
+            "https://openload.co/f/xbfs59IkEa4",
+            "https://openload.co/f/xbfs59IkEa4",
+            "https://openload.co/f/gmc0oJrPZgA",
+            "https://openload.co/f/tZNp2lPhMWA",
+            "https://openload.co/f/sck1QnjEyuk",
+            "https://openload.co/f/0G1SF43sDos",
+            "https://openload.co/f/ZbuV2PiZzAw"
+        ]
+    },
+    {
+        "title": "Colors Kannada Serial- 15-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/U7U_az5wKCM",
+            "https://openload.co/f/7y75VXIiPDw",
+            "https://openload.co/f/zTuxnDxvyfE",
+            "https://openload.co/f/8mLoHDxQ6KA",
+            "https://openload.co/f/YxczSWDUmvk",
+            "https://openload.co/f/gB_ISDMi42c",
+            "https://openload.co/f/RaEGabKIml0",
+            "https://openload.co/f/pmkts_pJ0vY"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 16/11/2017- Day 46",
+        "videoUrls": [
+            "https://openload.co/f/mQaIxPE1HuY"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (11:30pm) - 15/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/aKSlVGw7jP8"
+        ]
+    },
+    {
+        "title": "Oggarane Dabbi- 16/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/qMKhB3Ang10"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/ra3xUqmAeBc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/mOTXb7pKCeU"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Part 5",
+        "videoUrls": [
+            "https://openload.co/f/xlK_-cQ9UGI"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Part 4",
+        "videoUrls": [
+            "https://openload.co/f/_9vn_DhR3XQ"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Part 3",
+        "videoUrls": [
+            "https://openload.co/f/Ib6jKZ44bLA"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Part 2",
+        "videoUrls": [
+            "https://openload.co/f/_r8qlBlNc0o"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 16/11/2017 - Day 32-Part 1",
+        "videoUrls": [
+            "https://openload.co/f/6dQFH1ZFLVA"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 Unseen Avantara Not Seen On TV - 15-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/xpJwgDUsrxA"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Full Video - HD",
+        "videoUrls": [
+            "https://openload.co/f/708jEb_1wn4"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (2pm) - 15/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/g6FNzMVZdMc"
+        ]
+    },
+    {
+        "title": "Shantam Paapam- 15-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/lu9rUenR3gg"
+        ]
+    },
+    {
+        "title": "Star Suvarna- Kannada Serial- 15-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/TqC1cY96q0Q",
+            "https://openload.co/f/s1x3NcgSqLk",
+            "https://openload.co/f/xPciz4gTREU",
+            "https://openload.co/f/EFpC1K_ly1E",
+            "https://openload.co/f/HUgVdnDYKRA",
+            "https://openload.co/f/vEJ59NtU7dI",
+            "https://openload.co/f/Cqfi9U1QYM0"
+        ]
+    },
+    {
+        "title": "Zee Kannada- 15-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/cGPvnb8XhIs",
+            "https://openload.co/f/iDN0O4YCQOc",
+            "https://openload.co/f/mS9LhPPkLeo",
+            "https://openload.co/f/49gpYu2l6yQ",
+            "https://openload.co/f/SKPwc8E1QgQ",
+            "https://openload.co/f/IiURnaXvbtg",
+            "https://openload.co/f/szFFn9Fcdo4",
+            "https://openload.co/f/hEoO9MErkwk",
+            "https://openload.co/f/EOjHLfYzA6M",
+            "https://openload.co/f/qLHgnzHcmUg"
+        ]
+    },
+    {
+        "title": "Colors Super- 15-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/rOUyEu2XvqI",
+            "https://openload.co/f/ts1BOnRDr6M",
+            "https://openload.co/f/UFnG1U3cg6k",
+            "https://openload.co/f/Hlzeqi7x6F8",
+            "https://openload.co/f/0roTdi1l_jg"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 15/11/2017- Day 45",
+        "videoUrls": [
+            "https://openload.co/f/g3qGCAXYHXc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Extra",
+        "videoUrls": [
+            "https://openload.co/f/U_E7mS_96Oc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/MF0j9o8Mk80"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/Io3MGbKxWOA"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Part 5",
+        "videoUrls": [
+            "https://openload.co/f/PtaY6AXdfLY"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Part 4",
+        "videoUrls": [
+            "https://openload.co/f/XRP5_7Sp6tc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Part 3",
+        "videoUrls": [
+            "https://openload.co/f/6yBpnP6j5Tc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Part 2",
+        "videoUrls": [
+            "https://openload.co/f/B9vEsSwfKa8"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 15/11/2017 - Day 31-Part 1",
+        "videoUrls": [
+            "https://openload.co/f/oF8IEtzdGeU"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (11:30pm) - 14/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/ZVbXFar1ltE"
+        ]
+    },
+    {
+        "title": "Oggarane Dabbi- 15/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/okiE0IZelJ4"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 Unseen Avantara Not Seen On TV - 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/3EV7JunLolM"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Full Video - HD",
+        "videoUrls": [
+            "https://openload.co/f/mBxIjmYBLGc"
+        ]
+    },
+    {
+        "title": "Gunde Jaari Gallanthayyinde (2013) HDRip Telugu Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/-xumL3kUkys"
+        ]
+    },
+    {
+        "title": "Paradesi (2013) HDRip Telugu Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/r9fCciowFeg"
+        ]
+    },
+    {
+        "title": "Logan Lucky (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/HntkNZBvT04"
+        ]
+    },
+    {
+        "title": "Devil\u2019s Whisper (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/D0Fdh0QjRhw"
+        ]
+    },
+    {
+        "title": "Tulip Fever (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/U1C_UNZFJPM"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (2pm) - 14/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/toBTcBTRMdI"
+        ]
+    },
+    {
+        "title": "Shantam Paapam- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/klJ1hvZ_2UA"
+        ]
+    },
+    {
+        "title": "Zee Kannada- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/YEUv527E9a8",
+            "https://openload.co/f/JRXhK65XPlE",
+            "https://openload.co/f/rE9c3HXfygY",
+            "https://openload.co/f/35_Qpb4nB5o",
+            "https://openload.co/f/rTtrbQ78-78",
+            "https://openload.co/f/_kZy1vyI8oA",
+            "https://openload.co/f/2xMwgeHci2Y",
+            "https://openload.co/f/2xMwgeHci2Y",
+            "https://openload.co/f/pf3CmdEbBKg",
+            "https://openload.co/f/P4RAH8xVVfc"
+        ]
+    },
+    {
+        "title": "Star Suvarna- Kannada Serial- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/HRALzbs_kQ8",
+            "https://openload.co/f/33x-qvjajyQ",
+            "https://openload.co/f/nHkjM6PWQ3s",
+            "https://openload.co/f/1HwuEqtVi8Q",
+            "https://openload.co/f/HPpRXIh3TdI",
+            "https://openload.co/f/n00mAZf6zwo",
+            "https://openload.co/f/Q49lycCCrKo"
+        ]
+    },
+    {
+        "title": "Colors Super- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/Sjq1n-KhwMo",
+            "https://openload.co/f/JgUPZqfy8f0",
+            "https://openload.co/f/XJCrJ0u4nLE",
+            "https://openload.co/f/ion7a-1I82A",
+            "https://openload.co/f/6BhTtx5IU_M"
+        ]
+    },
+    {
+        "title": "Colors Kannada Serial- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/DSBlxptlbIE",
+            "https://openload.co/f/oJk20OtAQS8",
+            "https://openload.co/f/pbHlrQeMU5A",
+            "https://openload.co/f/2F9E6P3iiAg",
+            "https://openload.co/f/LysOLFRFuz4",
+            "https://openload.co/f/cILXQU6vqXM",
+            "https://openload.co/f/TB7fFQeN1x8",
+            "https://openload.co/f/Wfj6RVbNwDw"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 14/11/2017- Day 44",
+        "videoUrls": [
+            "https://openload.co/f/L2LCBH4rLno"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/tkXeIObWdU8"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/9a7Sb_tAP5I"
+        ]
+    }
+]
+    var sortingOrder = 'title';
+
+function UniqueArrayBy(collection, keyname) {
+        var output = [],
+        keys = [];
+
+        angular.forEach(collection, function(item) {
+                  var key = item[keyname];
+                  if(keys.indexOf(key) === -1) {
+                      keys.push(key);
+                      output.push(item);
+                  }
+              });
+        return output;
+   };
+
+var app = angular.module('myApp', []);
+
+app.controller('moviesCtrl', function($scope, $filter ) {
+
+    $scope.sortingOrder = sortingOrder;
+    $scope.reverse = false;
+    $scope.filteredItems = [];
+    $scope.groupedItems = [];
+    $scope.itemsPerPage = 5000;
+    $scope.pagedItems = [];
+    $scope.currentPage = 0;
+    $scope.items = UniqueArrayBy(moviesData,'title');
+
+    var searchMatch = function (haystack, needle) {
+        if (!needle) {
+            return true;
+        }
+        if(typeof haystack == 'string'){
+            return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+        }
+    };
+
+    // init the filtered items
+    $scope.search = function () {
+        $scope.filteredItems = $filter('filter')($scope.items, function (item) {
+            for(var attr in item) {
+                if (searchMatch(item[attr], $scope.query))
+                    return true;
+            }
+            return false;
+        });
+        // take care of the sorting order
+        if ($scope.sortingOrder !== '') {
+            $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+        }
+        $scope.currentPage = 0;
+        // now group by pages
+        $scope.groupToPages();
+    };
+
+    // calculate page in place
+    $scope.groupToPages = function () {
+        $scope.pagedItems = [];
+
+        for (var i = 0; i < $scope.filteredItems.length; i++) {
+            if (i % $scope.itemsPerPage === 0) {
+                $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ];
+            } else {
+                $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+            }
+        }
+    };
+
+    $scope.range = function (start, end) {
+        var ret = [];
+        if (!end) {
+            end = start;
+            start = 0;
+        }
+        for (var i = start; i < end; i++) {
+            ret.push(i);
+        }
+        return ret;
+    };
+
+    $scope.prevPage = function () {
+        if ($scope.currentPage > 0) {
+            $scope.currentPage--;
+        }
+    };
+
+    $scope.nextPage = function () {
+        if ($scope.currentPage < $scope.pagedItems.length - 1) {
+            $scope.currentPage++;
+        }
+    };
+
+    $scope.setPage = function () {
+        $scope.currentPage = this.n;
+    };
+
+    // functions have been describe process the data for display
+    $scope.search();
+
+    // change sorting order
+    $scope.sort_by = function(newSortingOrder) {
+        if ($scope.sortingOrder == newSortingOrder)
+            $scope.reverse = !$scope.reverse;
+
+        $scope.sortingOrder = newSortingOrder;
+
+    };
+});
+
+</script>
+
+<body>
+<div ng-app="myApp">
+
+
+    <div ng-controller="moviesCtrl">
+    <br/><br/>
+     <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
+      <br/><br/>
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <th>
+                <a href="#" ng-click="sort_by('title')">
+                          Title <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                          </a>
+                          </th>
+                <th>Urls</th>
+            </thead>
+            <tfoot>
+                                <td colspan="6">
+                                    <div class="pagination pull-right">
+                                        <ul>
+                                            <li ng-class="{disabled: currentPage == 0}">
+                                                <a href ng-click="prevPage()">Prev</a>
+                                            </li>
+                                            <li ng-repeat="n in range(pagedItems.length)"
+                                                ng-class="{active: n == currentPage}"
+                                            ng-click="setPage()">
+                                                <a href ng-bind="n + 1">1</a>
+                                            </li>
+                                            <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                                <a href ng-click="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tfoot>
+            <tr ng-repeat="movie in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+                <td>{{movie.title}}</td>
+                <td>
+                    <li ng-repeat-end ng-repeat="vUrl in movie.videoUrls track by $index">
+                        <a href="{{vUrl}}">{{vUrl}}</a></li>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

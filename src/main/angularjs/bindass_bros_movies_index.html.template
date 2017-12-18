@@ -32,7 +32,7 @@ app.controller('moviesCtrl', function(\$scope, \$filter ) {
     \$scope.reverse = false;
     \$scope.filteredItems = [];
     \$scope.groupedItems = [];
-    \$scope.itemsPerPage = 50;
+    \$scope.itemsPerPage = 5000;
     \$scope.pagedItems = [];
     \$scope.currentPage = 0;
     \$scope.items = UniqueArrayBy(moviesData,'title');

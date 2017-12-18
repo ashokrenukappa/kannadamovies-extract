@@ -21,11 +21,23 @@ dependencies {
     compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.7.1'
     compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
     compile group: 'org.yaml', name:'snakeyaml', version: '1.17'
+    compile group: 'org.ccil.cowan.tagsoup', name: 'tagsoup', version: '1.2'
 
 }
 
-task createHtml(type: JavaExec) {
+task kannadeMoviesHtml(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
     main = "KMParser"
-    args = ['/config.yaml']
+    args = ['/config_km.yaml']
 }
+
+
+task bindassBrosHtml(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "BBParser"
+    args = ['/config_bb.yaml']
+}
+
+task createHtml{}
+
+createHtml.dependsOn (bindassBrosHtml,kannadeMoviesHtml)

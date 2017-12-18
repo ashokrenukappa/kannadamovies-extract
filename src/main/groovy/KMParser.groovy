@@ -28,9 +28,9 @@ class KMParser {
     static List<String> BLACK_LIST_DOMAINS = []
     static List<String> BLACKLIST_MOVIE_TITLES = []
 
-    final static String MOVIES_INPUT_JSON = 'src/main/angularjs/movies_input.json'
-    final static String MOVIES_INDEX_HTML_TEMPLATE = 'src/main/angularjs/movies_index.html.template'
-    final static String MOVIES_INDEX_OUTPUT_HTML = 'src/main/angularjs/movies_index.html'
+    final static String MOVIES_INPUT_JSON = 'src/main/angularjs/kannada_movies_biz_movies_input.json'
+    final static String MOVIES_INDEX_HTML_TEMPLATE = 'src/main/angularjs/kannada_movies_biz_movies_index.html.template'
+    final static String MOVIES_INDEX_OUTPUT_HTML = 'src/main/angularjs/kannada_movies_biz_movies_index.html'
 
     public static void main(String [] a){
 
@@ -135,6 +135,7 @@ class KMParser {
         }
         idToIframeContentMap
     }
+
     static List extractMoviesList(){
         def http = new HTTPBuilder("http://kannadamovies.biz")
 

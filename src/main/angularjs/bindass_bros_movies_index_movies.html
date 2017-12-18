@@ -1,0 +1,538 @@
+<html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script>
+    var moviesData = [
+    {
+        "title": "Colors Super- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/Sjq1n-KhwMo",
+            "https://openload.co/f/JgUPZqfy8f0",
+            "https://openload.co/f/XJCrJ0u4nLE",
+            "https://openload.co/f/ion7a-1I82A",
+            "https://openload.co/f/6BhTtx5IU_M"
+        ]
+    },
+    {
+        "title": "Colors Kannada Serial- 14-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/DSBlxptlbIE",
+            "https://openload.co/f/oJk20OtAQS8",
+            "https://openload.co/f/pbHlrQeMU5A",
+            "https://openload.co/f/2F9E6P3iiAg",
+            "https://openload.co/f/LysOLFRFuz4",
+            "https://openload.co/f/cILXQU6vqXM",
+            "https://openload.co/f/TB7fFQeN1x8",
+            "https://openload.co/f/Wfj6RVbNwDw"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 14/11/2017- Day 44",
+        "videoUrls": [
+            "https://openload.co/f/L2LCBH4rLno"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/tkXeIObWdU8"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/9a7Sb_tAP5I"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 5",
+        "videoUrls": [
+            "https://openload.co/f/m0-COc7wCpM"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 4",
+        "videoUrls": [
+            "https://openload.co/f/AchNNa2I9MI"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 3",
+        "videoUrls": [
+            "https://openload.co/f/vYR0evkB2oo"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 2",
+        "videoUrls": [
+            "https://openload.co/f/zz76qbaNhXc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 14/11/2017 - Day 30-Part 1",
+        "videoUrls": [
+            "https://openload.co/f/YjcX1STz5dw"
+        ]
+    },
+    {
+        "title": "Oggarane Dabbi- 14/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/4joywIOxZW0"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (11:30pm) - 13/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/_dGEfECVz08"
+        ]
+    },
+    {
+        "title": "Badmaash (2016) Kannada full Movie WEBHD",
+        "videoUrls": [
+            "https://openload.co/f/oENSaipp2OU"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 Unseen Avantara Not Seen On TV - 13-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/BbGUcDnJN3A"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Full Video - HD",
+        "videoUrls": [
+            "https://openload.co/f/mehGT8XwI14"
+        ]
+    },
+    {
+        "title": "Superstar Kidnap (2015) HDRip Telugu Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/H1ap8pYQ6Ws"
+        ]
+    },
+    {
+        "title": "Columbus (2015) HDRip Telugu Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/EpXX_V46_9A"
+        ]
+    },
+    {
+        "title": "Thor: Ragnarok (2017) DVDScr Telugu (Line Audio) Dubbed Movie",
+        "videoUrls": [
+            "https://openload.co/f/YrOhOJCKuu8"
+        ]
+    },
+    {
+        "title": "Murder on the Orient Express (2017) DVDScr Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/PvlaUVzZZPc"
+        ]
+    },
+    {
+        "title": "The Humanity Bureau (2017) HDRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/XPaVOFj69Gc"
+        ]
+    },
+    {
+        "title": "Alien Convergence (2017) BRRip Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/vjh2o5xsy3o"
+        ]
+    },
+    {
+        "title": "Bigg Boss Extra Dose (2pm) - 13/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/O_7ghsJMYo0"
+        ]
+    },
+    {
+        "title": "Star Suvarna- Kannada Serial- 13-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/lZBdya7QwLM",
+            "https://openload.co/f/rmnBup8Za5w",
+            "https://openload.co/f/if3gUsmZfus",
+            "https://openload.co/f/sIYKGPS3tNU",
+            "https://openload.co/f/u6BuzgSyEk0",
+            "https://openload.co/f/wilqEHIm77Y",
+            "https://openload.co/f/u0kFb_T8Ecg"
+        ]
+    },
+    {
+        "title": "Zee Kannada- 13-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/LKMjWoWXcTs",
+            "https://openload.co/f/8Gcq5whcxD4",
+            "https://openload.co/f/O1cBz5ifzio",
+            "https://openload.co/f/Ra_xephAc6c",
+            "https://openload.co/f/ImbaCUyKbKc",
+            "https://openload.co/f/4JoX_aVp3CE",
+            "https://openload.co/f/uG05MMxudqQ",
+            "https://openload.co/f/aaa0IElSWZzyBI",
+            "https://openload.co/f/vlr0zb0fiC4",
+            "https://openload.co/f/3LEhS8YlCD8"
+        ]
+    },
+    {
+        "title": "Colors Super- 13-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/rxXhanpORfY",
+            "https://openload.co/f/ag7_LglUJGg",
+            "https://openload.co/f/EWbR70dXDr0",
+            "https://openload.co/f/o0eJhYgsqFs",
+            "https://openload.co/f/kaZSBOnJDN8"
+        ]
+    },
+    {
+        "title": "Colors Kannada Serial- 13-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/ewFquc7qI4M",
+            "https://openload.co/f/qipgh1dxCVw",
+            "https://openload.co/f/9bIf_oeUD88",
+            "https://openload.co/f/2tmkfyExgs8",
+            "https://openload.co/f/1kJSGnmjJgo",
+            "https://openload.co/f/ShXGfdEbT80",
+            "https://openload.co/f/8cvNSbkH9q8",
+            "https://openload.co/f/7N1BSPJUacg"
+        ]
+    },
+    {
+        "title": "Shantam Paapam- 13-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/qNwfo8QHqm8"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 13/11/2017- Day 43",
+        "videoUrls": [
+            "https://openload.co/f/XpAcrm11czk"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/18oK15A9q9M"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/myXphwANiCk"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Part 5",
+        "videoUrls": [
+            "https://openload.co/f/aStVu8oqTNI"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Part 4",
+        "videoUrls": [
+            "https://openload.co/f/V1j-ZutL7ok"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Part 3",
+        "videoUrls": [
+            "https://openload.co/f/fXFkQyQa8ug"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Part 2",
+        "videoUrls": [
+            "https://openload.co/f/R741XOxnDkU"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 13/11/2017 - Day 29-Part 1",
+        "videoUrls": [
+            "https://openload.co/f/AttSjgktljI"
+        ]
+    },
+    {
+        "title": "Tarak (2017) Kannada full Movie DVDScr",
+        "videoUrls": [
+            "https://openload.co/f/UBZqwNPn64E"
+        ]
+    },
+    {
+        "title": "Mugulu Nage (2017) Kannada full Movie DVDScr",
+        "videoUrls": [
+            "https://openload.co/f/1ht5Zieb2X8"
+        ]
+    },
+    {
+        "title": "Kaafi Thota(2017) Kannada full Movie DVDScr",
+        "videoUrls": [
+            "https://openload.co/f/ZlgoJUAeB2o"
+        ]
+    },
+    {
+        "title": "Bharjari(2016) Kannada full Movie DVDScr",
+        "videoUrls": [
+            "https://openload.co/f/PHwPY5T_D04"
+        ]
+    },
+    {
+        "title": "SA (2016) Kannada full Movie DTHRip",
+        "videoUrls": [
+            "https://openload.co/f/vFrue7eKn2M"
+        ]
+    },
+    {
+        "title": "Dana Kayonu (2016) Kannada full Movie DTHRip",
+        "videoUrls": [
+            "https://openload.co/f/3hNYMMZ92FE"
+        ]
+    },
+    {
+        "title": "Oggarane Dabbi- 13/11/2017",
+        "videoUrls": [
+            "https://openload.co/f/SXwXk6E_W94"
+        ]
+    },
+    {
+        "title": "Kannadada Habba 12-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/Y88LO6tfsNU"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 Unseen Avantara Not Seen On TV - 12-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/QowcoPQxauU"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 12/11/2017 - Day 28- Full video-HD",
+        "videoUrls": [
+            "https://openload.co/f/zr9JxQ_M5oQ"
+        ]
+    },
+    {
+        "title": "Okka Ammayi Thappa (2016) HDRip Telugu (Clear Audio) Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/EyeZ5Nhu9JM"
+        ]
+    },
+    {
+        "title": "Theru Naaigal (2017) HDRip Tamil Full Movie",
+        "videoUrls": [
+            "https://openload.co/f/EdTypiiE7N0"
+        ]
+    },
+    {
+        "title": "Bigg Boss 11- 12/11/2017- Day 42",
+        "videoUrls": [
+            "https://openload.co/f/xGZ2aJZJceg"
+        ]
+    },
+    {
+        "title": "Comedy Talkies 12-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/phvmsJb_Xig"
+        ]
+    },
+    {
+        "title": "Kannadada Habba 11-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/vYk34q9XFGA"
+        ]
+    },
+    {
+        "title": "Comedy Talkies 11-11-2017",
+        "videoUrls": [
+            "https://openload.co/f/ZvuRSkIrhdw"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 12/11/2017 - Day 28-Full Video",
+        "videoUrls": [
+            "https://openload.co/f/1p_nC4zFARc"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 12/11/2017 - Day 28-Part 6",
+        "videoUrls": [
+            "https://openload.co/f/EQFIP4_Xbpg"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 12/11/2017 - Day 28-Part 5",
+        "videoUrls": [
+            "https://openload.co/f/C__IPgDChEE"
+        ]
+    },
+    {
+        "title": "Bigg Boss Kannada Season 5 - 12/11/2017 - Day 28-Part 4",
+        "videoUrls": [
+            "https://openload.co/f/iRNyeMymugo"
+        ]
+    }
+]
+    var sortingOrder = 'title';
+
+function UniqueArrayBy(collection, keyname) {
+        var output = [],
+        keys = [];
+
+        angular.forEach(collection, function(item) {
+                  var key = item[keyname];
+                  if(keys.indexOf(key) === -1) {
+                      keys.push(key);
+                      output.push(item);
+                  }
+              });
+        return output;
+   };
+
+var app = angular.module('myApp', []);
+
+app.controller('moviesCtrl', function($scope, $filter ) {
+
+    $scope.sortingOrder = sortingOrder;
+    $scope.reverse = false;
+    $scope.filteredItems = [];
+    $scope.groupedItems = [];
+    $scope.itemsPerPage = 5000;
+    $scope.pagedItems = [];
+    $scope.currentPage = 0;
+    $scope.items = UniqueArrayBy(moviesData,'title');
+
+    var searchMatch = function (haystack, needle) {
+        if (!needle) {
+            return true;
+        }
+        if(typeof haystack == 'string'){
+            return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+        }
+    };
+
+    // init the filtered items
+    $scope.search = function () {
+        $scope.filteredItems = $filter('filter')($scope.items, function (item) {
+            for(var attr in item) {
+                if (searchMatch(item[attr], $scope.query))
+                    return true;
+            }
+            return false;
+        });
+        // take care of the sorting order
+        if ($scope.sortingOrder !== '') {
+            $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+        }
+        $scope.currentPage = 0;
+        // now group by pages
+        $scope.groupToPages();
+    };
+
+    // calculate page in place
+    $scope.groupToPages = function () {
+        $scope.pagedItems = [];
+
+        for (var i = 0; i < $scope.filteredItems.length; i++) {
+            if (i % $scope.itemsPerPage === 0) {
+                $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ];
+            } else {
+                $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+            }
+        }
+    };
+
+    $scope.range = function (start, end) {
+        var ret = [];
+        if (!end) {
+            end = start;
+            start = 0;
+        }
+        for (var i = start; i < end; i++) {
+            ret.push(i);
+        }
+        return ret;
+    };
+
+    $scope.prevPage = function () {
+        if ($scope.currentPage > 0) {
+            $scope.currentPage--;
+        }
+    };
+
+    $scope.nextPage = function () {
+        if ($scope.currentPage < $scope.pagedItems.length - 1) {
+            $scope.currentPage++;
+        }
+    };
+
+    $scope.setPage = function () {
+        $scope.currentPage = this.n;
+    };
+
+    // functions have been describe process the data for display
+    $scope.search();
+
+    // change sorting order
+    $scope.sort_by = function(newSortingOrder) {
+        if ($scope.sortingOrder == newSortingOrder)
+            $scope.reverse = !$scope.reverse;
+
+        $scope.sortingOrder = newSortingOrder;
+
+    };
+});
+
+</script>
+
+<body>
+<div ng-app="myApp">
+
+
+    <div ng-controller="moviesCtrl">
+    <br/><br/>
+     <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
+      <br/><br/>
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <th>
+                <a href="#" ng-click="sort_by('title')">
+                          Title <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                          </a>
+                          </th>
+                <th>Urls</th>
+            </thead>
+            <tfoot>
+                                <td colspan="6">
+                                    <div class="pagination pull-right">
+                                        <ul>
+                                            <li ng-class="{disabled: currentPage == 0}">
+                                                <a href ng-click="prevPage()">Prev</a>
+                                            </li>
+                                            <li ng-repeat="n in range(pagedItems.length)"
+                                                ng-class="{active: n == currentPage}"
+                                            ng-click="setPage()">
+                                                <a href ng-bind="n + 1">1</a>
+                                            </li>
+                                            <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                                <a href ng-click="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tfoot>
+            <tr ng-repeat="movie in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+                <td>{{movie.title}}</td>
+                <td>
+                    <li ng-repeat-end ng-repeat="vUrl in movie.videoUrls track by $index">
+                        <a href="{{vUrl}}">{{vUrl}}</a></li>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
